@@ -20,7 +20,7 @@ x = [1, 2, 3, 4]
 sq = [a**2 for a in x]
 print(sq)
 try:
-    print(a)
+    print(a) # type: ignore
 except Exception as NameError:
     print("'a' is not defined outside of list comprehension")
 
