@@ -1,7 +1,5 @@
 import os
 
-# tuples unpacking -
-
 # parallel assignment -
 lax_coords = (33.87575, -112.4874) # position matters when using tuples as records
 lat, long = lax_coords
