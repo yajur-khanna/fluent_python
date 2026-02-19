@@ -1,0 +1,60 @@
+# concatenating copies of sequences -
+my_list = [1, 2, 3, 4, 5, 6]
+
+my_list = my_list * 5
+print(my_list)
+
+word = "bicycle"
+print(word*5)
+
+
+# Building list of lists (best way to do is list comprehension) -
+
+board = [['_'] * 3 for i in range(3)] # 3 [_, _, _] lists
+print(board)
+board[0][2] = 'X'
+print(board)
+
+board2 = [['_'] * 3] * 3 # this would create 3 references to the same inner list
+print(board2)
+board2[0][2] = 'X'
+print(board2)
+
+
+# Augmented assignment, using += and *=
+
+'''+= uses __iadd__ or inplace addition special method, which if not available python fallsback
+to __add__ in which case a += b will have the same effect as a = a+b i.e. assigning a new
+object to a. Same goes for *= and other augmented assignments'''
+
+l = [1, 2, 3]
+print(id(l))
+
+l *= 2
+print(id(l))
+
+t = (1, 2, 3)
+print(id(t))
+
+t *= 2
+print(id(t)) # essentially it is creating a new tuple (1, 2, 3, 1, 2, 3) and assign it to 't'
+# not modifying the old tuple, as tuple is immutable
+
+my_list += [11] # essentially appending
+print(my_list)
+
+
+# sort and sorted
+print(id(my_list))
+my_list.sort()
+# we cannot do my_list = my_list.sort() as sort returns None
+print(id(my_list), my_list)
+
+print("Now using sorted -")
+my_list = sorted(my_list)
+print(id(my_list))
+
+
+fruits = ['apple', 'banana', 'orange', 'watermelon', 'blueberry']
+print(sorted(fruits, key=len, reverse=True)) # sorts in reverse by char len
+print(min(fruits, key=len))
