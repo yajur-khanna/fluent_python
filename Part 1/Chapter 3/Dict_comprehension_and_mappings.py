@@ -72,7 +72,8 @@ d1, d2 = dict(b=1, a=2), dict(a=2, b=1)
 print(od1==od2) # False for ordered dict
 print(d1==d2)
 
-# Also ordered dicts support popitem(last=False) and hence FIFO and LIFO behavior
+# Also ordered dicts support popitem(last=False) and hence FIFO and LIFO behavior,
+# dict's popitem() does not have the last key word arg
 
 food = dict(category='ice cream', flavor='vanilla', price=99)
 match food:
