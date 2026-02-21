@@ -64,3 +64,19 @@ print(list(result))
 a = list(filter(lambda c: c>60, [1, 2, 43, 80, 100]))
 print(a)
 
+# nested list -
+
+lst = [[]] * 2
+print(id(lst[0]))
+print(id(lst[1]))
+# this creates copies of the same object, both nested lists at index 0 and 1 hold reference
+# to the same list object
+
+lst = [[], []] # or lst = [list(), list()]
+print(id(lst[0]))
+print(id(lst[1]))
+# now both nested list point to 2 different list objects
+
+lst = [[] for i in range(5)]
+for i in range(5):
+    print(f"ID {i+1} ", id(lst[i]))
