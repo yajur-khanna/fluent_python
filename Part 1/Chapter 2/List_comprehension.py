@@ -80,3 +80,10 @@ print(id(lst[1]))
 lst = [[] for i in range(5)]
 for i in range(5):
     print(f"ID {i+1} ", id(lst[i]))
+
+
+# Iterating a list of tuples -
+b = [('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', 5)]
+print("Iterating list of tuples -")
+for i, j in b:
+    print(i, j)
