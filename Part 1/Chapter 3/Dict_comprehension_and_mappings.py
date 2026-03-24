@@ -111,3 +111,21 @@ print("d1: ", d1)
 popped = d3.popitem()
 print(popped) # d3 scores will be returned, scores was last 'item' added to dict
 
+
+# dict keys must be hashable, since custom class objects are hashable by default they can be dict keys -
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
+a = Node(1)
+b = Node(2)
+a.next = b
+b.next = None
+
+d = {}
+d[a] = [a.val, a.next]
+d[b] = [b.val, b.next]
+
+node_a = d.get(a, [])
+print(node_a[0])   # node A value
